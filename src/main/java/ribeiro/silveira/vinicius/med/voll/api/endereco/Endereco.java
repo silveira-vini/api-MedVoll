@@ -1,10 +1,30 @@
 package ribeiro.silveira.vinicius.med.voll.api.endereco;
 
-public record Endereco(String logradouro,
-                       String bairro,
-                       String cep,
-                       String cidade,
-                       String uf,
-                       String numero,
-                       String complemento) {
+import jakarta.persistence.Embeddable;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Embeddable
+@Getter
+@NoArgsConstructor
+public class Endereco {
+
+    private String logradouro;
+    private String bairro;
+    private String cep;
+    private String cidade;
+    private String uf;
+    private String numero;
+    private String complemento;
+
+    public Endereco(EnderecoDTO dados) {
+        this.logradouro = dados.logradouro();
+        this.bairro = dados.bairro();
+        this.cep = dados.cep();
+        this.cidade = dados.cidade();
+        this.uf = dados.uf();
+        this.numero = dados.numero();
+        this.complemento = dados.complemento();
+    }
 }
