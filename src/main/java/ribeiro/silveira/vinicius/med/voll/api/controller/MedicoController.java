@@ -1,6 +1,8 @@
 package ribeiro.silveira.vinicius.med.voll.api.controller;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +19,8 @@ public class MedicoController {
     private MedicoRepository repository;
 
     @PostMapping
-    public void cadastrar(@RequestBody MedicoDTO dados) {
+    @Transactional
+    public void cadastrar(@RequestBody @Valid MedicoDTO dados) {
         repository.save(new Medico(dados));
     }
 }
