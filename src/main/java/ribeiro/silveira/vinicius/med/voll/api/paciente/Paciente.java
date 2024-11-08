@@ -1,6 +1,7 @@
 package ribeiro.silveira.vinicius.med.voll.api.paciente;
 
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -24,6 +25,7 @@ public class Paciente {
     private String cpf;
     @Embedded
     private Endereco endereco;
+    private boolean ativo;
 
     public Paciente(PacienteCadastroDTO dados) {
         this.nome = dados.nome();
@@ -31,5 +33,16 @@ public class Paciente {
         this.telefone = dados.telefone();
         this.cpf = dados.cpf();
         this.endereco = new Endereco(dados.endereco());
+        this.ativo = true;
+    }
+
+    public void atualizarDados(@Valid PacienteAtualizacaoDTO dados) {
+        if (dados.nome() != null) this.nome = dados.nome();
+        if (dados.telefone() != null) this.telefone = dados.telefone();
+        if (dados.endereco() != null) this.endereco.atualizarEndereco(dados.endereco());
+    }
+
+    public void excluir(Long id) {
+        this.ativo = false;
     }
 }
