@@ -1,6 +1,6 @@
-package ribeiro.silveira.vinicius.med.voll.api.paciente;
+package ribeiro.silveira.vinicius.med.voll.api.domain.paciente;
 
-import ribeiro.silveira.vinicius.med.voll.api.endereco.Endereco;
+import ribeiro.silveira.vinicius.med.voll.api.domain.endereco.Endereco;
 
 public record PacienteDetalhadoDTO(Long id,
                                    String nome,

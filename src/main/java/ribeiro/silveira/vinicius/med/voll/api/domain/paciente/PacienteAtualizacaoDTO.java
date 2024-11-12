@@ -1,7 +1,7 @@
-package ribeiro.silveira.vinicius.med.voll.api.paciente;
+package ribeiro.silveira.vinicius.med.voll.api.domain.paciente;
 
 import jakarta.validation.constraints.NotNull;
-import ribeiro.silveira.vinicius.med.voll.api.endereco.EnderecoDTO;
+import ribeiro.silveira.vinicius.med.voll.api.domain.endereco.EnderecoDTO;
 
 public record PacienteAtualizacaoDTO(
         @NotNull

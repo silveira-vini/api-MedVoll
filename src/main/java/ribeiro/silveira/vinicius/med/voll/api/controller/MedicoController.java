@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-import ribeiro.silveira.vinicius.med.voll.api.medico.*;
+import ribeiro.silveira.vinicius.med.voll.api.domain.medico.*;
 
 @RestController
 @RequestMapping("/medicos")

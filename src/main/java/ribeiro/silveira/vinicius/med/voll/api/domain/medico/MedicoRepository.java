@@ -1,4 +1,4 @@
-package ribeiro.silveira.vinicius.med.voll.api.medico;
+package ribeiro.silveira.vinicius.med.voll.api.domain.medico;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
