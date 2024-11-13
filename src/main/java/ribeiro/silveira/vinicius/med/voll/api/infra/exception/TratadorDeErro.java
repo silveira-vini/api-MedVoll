@@ -1,4 +1,4 @@
-package ribeiro.silveira.vinicius.med.voll.api.infra;
+package ribeiro.silveira.vinicius.med.voll.api.infra.exception;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.HttpStatus;

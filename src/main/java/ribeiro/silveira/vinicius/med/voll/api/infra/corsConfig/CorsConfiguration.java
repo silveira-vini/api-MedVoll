@@ -1,4 +1,4 @@
-package ribeiro.silveira.vinicius.med.voll.api.infra;
+package ribeiro.silveira.vinicius.med.voll.api.infra.corsConfig;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
