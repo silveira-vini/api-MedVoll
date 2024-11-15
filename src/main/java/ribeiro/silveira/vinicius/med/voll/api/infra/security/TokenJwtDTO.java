@@ -1,0 +1,4 @@
+package ribeiro.silveira.vinicius.med.voll.api.infra.security;
+
+public record TokenJwtDTO(String token) {
+}
