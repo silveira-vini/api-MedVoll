@@ -14,6 +14,7 @@ import ribeiro.silveira.vinicius.med.voll.api.domain.usuario.Usuario;
 import ribeiro.silveira.vinicius.med.voll.api.infra.security.TokenJwtDTO;
 import ribeiro.silveira.vinicius.med.voll.api.infra.security.TokenService;
 
+
 @RestController
 @RequestMapping("/login")
 public class AutenticacaoController {
@@ -25,11 +26,13 @@ public class AutenticacaoController {
 
     @PostMapping
     public ResponseEntity efetuarLogin(@RequestBody @Valid DadosAutenticacaoDTO dados) {
-        var authenticationToken = new UsernamePasswordAuthenticationToken(dados.login(), dados.senha());
-        var authentication = manager.authenticate(authenticationToken);
-
-        var tokenJWT = tokenService.gerarToken((Usuario) authentication.getPrincipal());
-
-        return ResponseEntity.ok(new TokenJwtDTO(tokenJWT));
+        try {
+            var authenticationToken = new UsernamePasswordAuthenticationToken(dados.login(), dados.senha());
+            var authentication = manager.authenticate(authenticationToken);
+            var tokenJWT = tokenService.gerarToken((Usuario) authentication.getPrincipal());
+            return ResponseEntity.ok(new TokenJwtDTO(tokenJWT));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 }

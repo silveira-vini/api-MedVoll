@@ -2,10 +2,7 @@ package ribeiro.silveira.vinicius.med.voll.api.domain.medico;
 
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import ribeiro.silveira.vinicius.med.voll.api.domain.endereco.Endereco;
 
 @Table(name = "medicos")
