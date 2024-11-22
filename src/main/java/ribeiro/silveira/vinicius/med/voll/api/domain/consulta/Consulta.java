@@ -1,4 +1,4 @@
-package ribeiro.silveira.vinicius.med.voll.api.domain.consuta;
+package ribeiro.silveira.vinicius.med.voll.api.domain.consulta;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -32,4 +32,11 @@ public class Consulta {
 
     private LocalDateTime data;
 
+    @Column(name = "motivo_cancelamento")
+    @Enumerated(EnumType.STRING)
+    private MotivoCancelamento motivoCancelamento;
+
+    public void cancelar(MotivoCancelamento motivo) {
+        this.motivoCancelamento = motivo;
+    }
 }

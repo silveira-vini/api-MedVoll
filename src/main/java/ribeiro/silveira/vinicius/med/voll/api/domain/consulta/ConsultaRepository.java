@@ -1,4 +1,4 @@
-package ribeiro.silveira.vinicius.med.voll.api.domain.consuta;
+package ribeiro.silveira.vinicius.med.voll.api.domain.consulta;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
